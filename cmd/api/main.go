@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
+	db "github.com/ELizaveta-Gribacheva/Lab_5_api/db/sqlc"
+	"github.com/ELizaveta-Gribacheva/Lab_5_api/internal/server"
 	"github.com/jackc/pgx/v5/pgxpool"
-	db "github.com/nochzato/example/db/sqlc"
-	"github.com/nochzato/example/internal/server"
 )
 
 func main() {
@@ -21,5 +21,7 @@ func main() {
 	store := db.NewStore(connPool)
 
 	server := server.NewServer(store)
+	fmt.Println("Server is starting on port 3000...")
 	server.Run(":3000")
+	fmt.Println("Server stopped running")
 }
