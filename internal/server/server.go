@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
+	db "github.com/ELizaveta-Gribacheva/Lab_5_api/db/sqlc"
 	"github.com/go-chi/chi/v5"
-	db "github.com/nochzato/example/db/sqlc"
 )
 
 type Server struct {
